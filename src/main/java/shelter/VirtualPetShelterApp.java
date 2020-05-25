@@ -1,8 +1,5 @@
 package shelter;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /* how to fix lines for midnight*/
@@ -11,23 +8,24 @@ public class VirtualPetShelterApp {
         int usersSelectionNumber = 1;
         String userSelectionName;
         String userSelectionDescription;
+        VirtualPetArt art = new VirtualPetArt();
+
         Scanner stringInput = new Scanner(System.in);
         Scanner userInput = new Scanner(System.in);
-        VirtualPetArt art = new VirtualPetArt();
-        //declare Objects
+
         virtualPet pet1 = new virtualPet("Salem", "He is an older, cuddly cat with black fur and green eyes.");
         virtualPet pet2 = new virtualPet("Aspen", "She is a young puppy with long white and grey fur and blue eyes.");
         virtualPet pet3 = new virtualPet("Nina", "She is a brown and white gerbil who tends to bit while being held.");
         virtualPet pet4 = new virtualPet("Midnight", "He is a tiny gerbil with black fur and buck teeth.");
-        //Add pets to shelter
+
         virtualPetShelter actualShelter = new virtualPetShelter();
         actualShelter.addPet(pet1);
         actualShelter.addPet(pet2);
         actualShelter.addPet(pet3);
         actualShelter.addPet(pet4);
-        //welcome statement-Refactored
+
         welcomeStatement(actualShelter);
-        //Game Loop
+
         while (usersSelectionNumber != 0) {
             directions();
             usersSelectionNumber = userInput.nextInt();
@@ -35,51 +33,74 @@ public class VirtualPetShelterApp {
                 actualShelter.feedAll(30);
                 System.out.println("The animals look well fed. Thanks!");
             } else if (usersSelectionNumber == 2) {
-                actualShelter.receivePetNames();
-                System.out.println("Please type in the pets name you would like to play with:");
-                userSelectionName = stringInput.nextLine();
-                if (actualShelter.isAnimalInShelter(userSelectionName)) {
-                    actualShelter.returnOnePet(userSelectionName).play(25);
-                    System.out.println(actualShelter.returnOnePet(userSelectionName).getPetName() + " had fun playing with you!");
-                } else {
-                    System.out.println("Please pick from the names provided.\n");
-                }
+                press2Play(stringInput, actualShelter);
             } else if (usersSelectionNumber == 3) {
                 actualShelter.sleepAll(40);
                 System.out.println("Shhh... They are all napping");
             } else if (usersSelectionNumber == 4) {
-                actualShelter.receivePetNames();
-                System.out.println("Put in the name of the animal you are signing adoption paper work for:");
-                userSelectionName = stringInput.nextLine();
-                if (actualShelter.isAnimalInShelter(userSelectionName)) {
-                    System.out.println(actualShelter.returnOnePet(userSelectionName).getPetName() + " was just adopted.\n");
-                    actualShelter.removePet(userSelectionName);
-                } else {
-                    System.out.println("Please pick from the names provided.\n");
-                }
+                press4Adopt(stringInput, actualShelter);
             } else if (usersSelectionNumber == 5) {
-                System.out.println("Someone just found a stray. What should we name it?");
-                userSelectionName = stringInput.nextLine();
-                System.out.println("Please fill out the type of animal and a short description.");
-                userSelectionDescription = stringInput.nextLine();
-                virtualPet newPet = new virtualPet(userSelectionName, userSelectionDescription);
-                actualShelter.addPet(newPet);
-                System.out.println("Great! " + userSelectionName + " has been added.");
+                press5TakeIn(stringInput, actualShelter);
             } else if (usersSelectionNumber == 6) {
-                actualShelter.receivePetNames();
-                System.out.println("Please type in the pets name you would like to learn more about.");
-                userSelectionName = stringInput.nextLine();
-                if (actualShelter.isAnimalInShelter(userSelectionName)) {
-                    System.out.println("You chose to learn more about " + actualShelter.returnOnePet(userSelectionName).getPetName() + ".\n"
-                            + actualShelter.returnOnePet(userSelectionName).getDescription() + "\n");
-                } else {
-                    System.out.println("Please pick from the names provided.\n");
-                }
+                press6Bios(stringInput, actualShelter);
             }
             if (usersSelectionNumber != 0) {
                 actualShelter.tickAll();
                 animalsWellBeings(actualShelter);
-            } else {/*write good bye message*/}
+            } else {
+                System.out.println( art.exitGame+"\nThanks for helping today! We hope to have you back soon!");
+            }
+        }
+    }
+
+    private static void press6Bios(Scanner stringInput, virtualPetShelter actualShelter) {
+        String userSelectionName;
+        actualShelter.receivePetNames();
+        System.out.println("Please type in the pets name you would like to learn more about.");
+        userSelectionName = stringInput.nextLine();
+        if (actualShelter.isAnimalInShelter(userSelectionName)) {
+            System.out.println("You chose to learn more about " + actualShelter.returnOnePet(userSelectionName).getPetName() + ".\n"
+                    + actualShelter.returnOnePet(userSelectionName).getDescription() + "\n");
+        } else {
+            System.out.println("Please pick from the names provided.\n");
+        }
+    }
+
+    private static void press5TakeIn(Scanner stringInput, virtualPetShelter actualShelter) {
+        String userSelectionName;
+        String userSelectionDescription;
+        System.out.println("Someone just found a stray. What should we name it?");
+        userSelectionName = stringInput.nextLine();
+        System.out.println("Please fill out the type of animal and a short description.");
+        userSelectionDescription = stringInput.nextLine();
+        virtualPet newPet = new virtualPet(userSelectionName, userSelectionDescription);
+        actualShelter.addPet(newPet);
+        System.out.println("Great! " + userSelectionName + " has been added.");
+    }
+
+    private static void press4Adopt(Scanner stringInput, virtualPetShelter actualShelter) {
+        String userSelectionName;
+        actualShelter.receivePetNames();
+        System.out.println("Put in the name of the animal you are signing adoption paper work for:");
+        userSelectionName = stringInput.nextLine();
+        if (actualShelter.isAnimalInShelter(userSelectionName)) {
+            System.out.println(actualShelter.returnOnePet(userSelectionName).getPetName() + " was just adopted.\n");
+            actualShelter.removePet(userSelectionName);
+        } else {
+            System.out.println("Please pick from the names provided.\n");
+        }
+    }
+
+    private static void press2Play(Scanner stringInput, virtualPetShelter actualShelter) {
+        String userSelectionName;
+        actualShelter.receivePetNames();
+        System.out.println("Please type in the pets name you would like to play with:");
+        userSelectionName = stringInput.nextLine();
+        if (actualShelter.isAnimalInShelter(userSelectionName)) {
+            actualShelter.returnOnePet(userSelectionName).play(25);
+            System.out.println(actualShelter.returnOnePet(userSelectionName).getPetName() + " had fun playing with you!");
+        } else {
+            System.out.println("Please pick from the names provided.\n");
         }
     }
 

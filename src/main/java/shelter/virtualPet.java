@@ -2,7 +2,6 @@ package shelter;
 
 import java.util.Random;
 
-//Fields & Values
 public class virtualPet {
     private String name;
     private String description;
@@ -11,7 +10,6 @@ public class virtualPet {
     private int tiredness;
     private int tickCount;
 
-    //Constructor
     public virtualPet(String petName, String petDescription) {
         Random generateNumber = new Random();
         int numberGenerated;
@@ -27,32 +25,36 @@ public class virtualPet {
         this.tickCount = 0;
     }
 
-    //getter methods
     public String getPetName() {
+
         return name;
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public int getBoredom() {
+
         return boredom;
     }
 
     public int getHungry() {
+
         return hunger;
     }
 
     public int getTiredness() {
+
         return tiredness;
     }
 
     public int getTickCount() {
+
         return tickCount;
     }
 
-    //update method
     public void feed(int fed) {
         if (hunger - fed >= 0) {
             hunger = hunger - fed;
@@ -69,7 +71,6 @@ public class virtualPet {
         } else {
             tiredness = 50;
         }
-
     }
 
     public void play(int activity) {
@@ -105,12 +106,8 @@ public class virtualPet {
             boredom = boredom + 5;
         } else {
             boredom = 50;
-
         }
-
-
     }
-
 
     public void tick() {
         Random selfDetermination = new Random();
