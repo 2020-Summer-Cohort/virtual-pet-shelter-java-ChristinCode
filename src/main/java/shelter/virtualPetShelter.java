@@ -55,6 +55,4 @@ public class virtualPetShelter {
     public boolean isAnimalInShelter(String petName) {
         return shelterMap.containsKey(petName);
     }
-
 }
-

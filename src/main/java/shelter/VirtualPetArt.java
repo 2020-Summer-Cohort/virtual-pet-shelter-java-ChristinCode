@@ -1,7 +1,7 @@
 package shelter;
 
 public class VirtualPetArt {
-    public String salem=
+    public String salem =
             "       _\n" +
                     "       \\`*-.\n" +
                     "        )  _`-.\n" +
@@ -16,10 +16,10 @@ public class VirtualPetArt {
                     "         :  '  |    ;       ;-.\n" +
                     "         ; '   : :`-:     _.`* ;\n" +
                     "      .*' /  .*' ; .*`- +'  `*'\n" +
-                    "      `*-*   `*-*  `*-*'\n" ;
+                    "      `*-*   `*-*  `*-*'\n";
 
 
-    public String exitGame=
+    public String exitGame =
 
             "\n" +
                     "                                /|\n" +
@@ -28,7 +28,7 @@ public class VirtualPetArt {
                     "                             ||\\\\\n" +
                     "                             /   \\\n" +
                     "                             |   |\n" +
-                    "                       r     \\   \\     r^-\n" +
+                    "                       r     \\   \\     r0\n" +
                     "                       |\\---- |   |---/|\n" +
                     "                       /      |   | |  \\\n" +
                     "          - - - - -   (      /   /      ) - - - - - - -\n" +
@@ -45,5 +45,6 @@ public class VirtualPetArt {
                     "           {^_^} v{-_-}                 {*_*} v(0_0}\n";
 
 
-
 }
+
+

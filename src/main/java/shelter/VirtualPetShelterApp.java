@@ -13,10 +13,10 @@ public class VirtualPetShelterApp {
         Scanner stringInput = new Scanner(System.in);
         Scanner userInput = new Scanner(System.in);
 
-        virtualPet pet1 = new virtualPet("Salem", "He is an older, cuddly cat with black fur and green eyes.");
-        virtualPet pet2 = new virtualPet("Aspen", "She is a young puppy with long white and grey fur and blue eyes.");
-        virtualPet pet3 = new virtualPet("Nina", "She is a brown and white gerbil who tends to bit while being held.");
-        virtualPet pet4 = new virtualPet("Midnight", "He is a tiny gerbil with black fur and buck teeth.");
+        virtualPet pet1 = new virtualPet("Salem", "He is an older, cuddly cat with black fur and green eyes.  龴ↀ◡ↀ龴");
+        virtualPet pet2 = new virtualPet("Aspen", "She is a young puppy with long white and grey fur and blue eyes.  V(^◡^)V");
+        virtualPet pet3 = new virtualPet("Nina", "She is a brown and white gerbil who tends to bit while being held.  (◕ᴥ◕)");
+        virtualPet pet4 = new virtualPet("Midnight", "He is a tiny gerbil with black fur and buck teeth.  (˚ᴥ˚)");
 
         virtualPetShelter actualShelter = new virtualPetShelter();
         actualShelter.addPet(pet1);
@@ -42,27 +42,14 @@ public class VirtualPetShelterApp {
             } else if (usersSelectionNumber == 5) {
                 press5TakeIn(stringInput, actualShelter);
             } else if (usersSelectionNumber == 6) {
-                press6Bios(stringInput, actualShelter);
+                actualShelter.receivePetNames();
             }
             if (usersSelectionNumber != 0) {
                 actualShelter.tickAll();
                 animalsWellBeings(actualShelter);
             } else {
-                System.out.println( art.exitGame+"\nThanks for helping today! We hope to have you back soon!");
+                System.out.println(art.exitGame + "\nThanks for helping today! We hope to have you back soon!");
             }
-        }
-    }
-
-    private static void press6Bios(Scanner stringInput, virtualPetShelter actualShelter) {
-        String userSelectionName;
-        actualShelter.receivePetNames();
-        System.out.println("Please type in the pets name you would like to learn more about.");
-        userSelectionName = stringInput.nextLine();
-        if (actualShelter.isAnimalInShelter(userSelectionName)) {
-            System.out.println("You chose to learn more about " + actualShelter.returnOnePet(userSelectionName).getPetName() + ".\n"
-                    + actualShelter.returnOnePet(userSelectionName).getDescription() + "\n");
-        } else {
-            System.out.println("Please pick from the names provided.\n");
         }
     }
 
@@ -106,7 +93,7 @@ public class VirtualPetShelterApp {
 
     private static void directions() {
         //Game Directions
-        System.out.println("What would you like to do?\nPress 1 to feed all animals\nPress 2 to play with individual animal\nPress 3 to put all animals to bed\nPress 4 to sign adoption paper work\nPress 5 to take in a new animal\nPress 6 to read animal bio\nPress 0 to end shift and exit game");
+        System.out.println("What would you like to do?\nPress 1 to feed all animals\nPress 2 to play with individual animal\nPress 3 to put all animals to bed\nPress 4 to sign adoption paper work\nPress 5 to take in a new animal\nPress 6 to read animal bios\nPress 0 to end shift and exit game");
     }
 
     private static void welcomeStatement(virtualPetShelter actualShelter) {
