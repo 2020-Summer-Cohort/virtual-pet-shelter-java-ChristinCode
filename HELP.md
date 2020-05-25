@@ -1,14 +1,23 @@
 # Virtual Pet Shelter
 
-So, you have some experience under your belt in the care and feeding of a virtual pet. It's time to share that with the community! Time to volunteer! 
+So, you have some experience under your belt in the care and feeding of a virtual pet. 
+It's time to share that with the community! Time to volunteer! 
 
-Build upon your Virtual Pet project that allows you to care for multiple pets in a virtual pet shelter!
+Build upon your Virtual Pet project that allows you to care for multiple pets in a 
+virtual pet shelter!
 
 ## Details
 
-In our Virtual Pet project, we created a pet from a `VirtualPet` class and set up a game loop for user interaction in `VirtualPetApp` class. For this project, we will be creating a `VirtualPetShelter` class that allows the user to house and care for a collection of pets. The ideal way to organize your code would be to have your `VirtualPetApp` call methods from `VirtualPetShelter` which interact with our `VirtualPet` objects. 
+In our Virtual Pet project, we created a pet from a `VirtualPet` class 
+and set up a game loop for user interaction in `VirtualPetApp` class. For this 
+project, we will be creating a `VirtualPetShelter` class that allows the user to
+ house and care for a collection of pets. The ideal way to organize your code would 
+ be to have your `VirtualPetApp` call methods from `VirtualPetShelter` which interact 
+ with our `VirtualPet` objects. 
 
-We encourage you to use TDD on this project, but it is not required to attain a passing grade. If you feel trying to incorporate testing would be a barrier to your completing the project before the deadline, forgo it. 
+We encourage you to use TDD on this project, but it is not required to attain a passing 
+grade. If you feel trying to incorporate testing would be a barrier to your completing the 
+project before the deadline, forgo it. 
 
 ### Example Console Output And User Interaction
 
@@ -79,9 +88,14 @@ Tommy's Boredom would be lowered, the tick() method effects every pet in the she
 - Available user interface actions should include (at minimum)…
 	- [ ] feeding all the pets
 	- [ ] watering all the pets
-	- [ ] playing with an individual pet, which should display a list of pet names and descriptions, allowing a user to select one
-	- [ ] allow adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one.  _NOTE: In the past this has been a bit confusing.  Keep in mind you are playing the role of a shelter worker, if a pet is adopted it will be removed from the shelter._
-	- [ ] allow intake of a pet, prompting the user for the pet's information, requiring the user to (at minimum) specify name and description
+	- [ ] playing with an individual pet, which should display a list of pet names and 
+	descriptions, allowing a user to select one
+	- [ ] allow adoption of a pet, which should display a list of pet names and 
+	descriptions, allowing a user to select one.  _NOTE: In the past this has been 
+	a bit confusing.  Keep in mind you are playing the role of a shelter worker, if a 
+	pet is adopted it will be removed from the shelter._
+	- [ ] allow intake of a pet, prompting the user for the pet's information, 
+	requiring the user to (at minimum) specify name and description
 
 	(*Hint: you can use tab characters ("\t") to align console output in columns.*)
 
@@ -96,16 +110,19 @@ Tommy's Boredom would be lowered, the tick() method effects every pet in the she
 	- [ ] feed all of the pets in the shelter
 	- [ ] water all of the pets in the shelter
 	- [ ] plays (or performs some other interaction(s)) with an individual pet in the shelter
-- [ ] include a `tick` method that calls the `tick` method for each of the pets in the shelter, updating their needs
+- [ ] include a `tick` method that calls the `tick` method for each of the pets in the 
+shelter, updating their needs
 
 ### VirtualPet class
 	
 In addition to the requirements from [last week's project](./virtual-pet):
 - [ ] include instance variables representing:
 	- [ ] name (from the above example, this might be "Tommy")
-	- [ ] description (from the above example, this might be "smells like a Stargazer lily fresh with morning dew")
+	- [ ] description (from the above example, this might be "smells like a Stargazer 
+	lily fresh with morning dew")
 - [ ] include a constructor that accepts a name and description
-- [ ] include a constructor that, in addition to name and description, accepts default values for the pet's attributes (hunger, boredom, etc)
+- [ ] include a constructor that, in addition to name and description, accepts default 
+values for the pet's attributes (hunger, boredom, etc)
 - [ ] Do **not** include a default (zero arguments) constructor.
  
 ### Grading
