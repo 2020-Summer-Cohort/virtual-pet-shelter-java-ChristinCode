@@ -26,6 +26,10 @@ public class VirtualPetShelterApp {
 
         welcomeStatement(actualShelter);
 
+        gameLoop(usersSelectionNumber, art, stringInput, userInput, actualShelter);
+    }
+
+    private static void gameLoop(int usersSelectionNumber, VirtualPetArt art, Scanner stringInput, Scanner userInput, virtualPetShelter actualShelter) {
         while (usersSelectionNumber != 0) {
             directions();
             usersSelectionNumber = userInput.nextInt();
