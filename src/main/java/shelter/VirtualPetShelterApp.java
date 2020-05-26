@@ -2,7 +2,6 @@ package shelter;
 
 import java.util.Scanner;
 
-/* how to fix lines for midnight*/
 public class VirtualPetShelterApp {
     public static void main(String[] args) {
         int usersSelectionNumber = 1;
