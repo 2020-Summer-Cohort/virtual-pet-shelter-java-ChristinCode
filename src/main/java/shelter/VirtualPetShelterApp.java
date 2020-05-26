@@ -95,12 +95,10 @@ public class VirtualPetShelterApp {
     }
 
     private static void directions() {
-        //Game Directions
         System.out.println("What would you like to do?\nPress 1 to feed all animals\nPress 2 to play with individual animal\nPress 3 to put all animals to bed\nPress 4 to sign adoption paper work\nPress 5 to take in a new animal\nPress 6 to read animal bios\nPress 0 to end shift and exit game");
     }
 
     private static void welcomeStatement(virtualPetShelter actualShelter) {
-        //welcome statement
         System.out.println("Welcome to the Virtual Pet Shelter. We are excited to have your help taking care \nof our furry friends. " +
                 "We will need help with feeding the animals, playing \nwith each one individually, and putting them to bed. " +
                 "Below is a list of \nthe animals and their current well being status. " +
@@ -113,7 +111,6 @@ public class VirtualPetShelterApp {
     }
 
     private static void animalsWellBeings(virtualPetShelter actualShelter) {
-        //current status with for loop
         System.out.println("\t\t\t\t\t\t Well Being Levels\n" +
                 "\tName:\t|\tHunger Level:\t|\tBoredom Level:\t|\tTiredness Level:\t\n" +
                 "------------|-------------------|-------------------|-------------------");
